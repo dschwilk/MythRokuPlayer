@@ -37,8 +37,8 @@ mythcommflag --file $newname --rebuild
 # remove the orignal mpg - note: when the recording is deleted using the roku, this original file will be deleted
 # , but not if deleted from mythtv frontend or mythweb.  see http://www.mythtv.org/wiki/Find_orphans.py for a solution.
 #date=`date`
-#echo "$MYTHDIR/$MPGFILE:$date File/remove" >> $LOGFILE
-#rm $MYTHDIR/$MPGFILE
+echo "$MYTHDIR/$MPGFILE:$date File/remove" >> $LOGFILE
+rm $MYTHDIR/$MPGFILE
 
 date=`date`
 echo "$date: Roku Encode $newbname Complete" >> $LOGFILE

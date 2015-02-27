@@ -6,12 +6,12 @@ require_once 'php-activerecord/ActiveRecord.php'; // http://www.phpactiverecord.
 const DB_UTC_VER = '1307';  // http://www.mythtv.org/wiki?title=Category:DB_Table&oldid=56896
 
 //EDIT-HERE: Weather Forecaset location
-$City = 'District of Columbia';
-$State = '';
+$City = 'Lubbock';
+$State = 'TX';
 $Country = 'USA';
 
 //EDIT-HERE: Addresses of systems needed to use MythRokuPlayer
-$WebHostIP = "192.168.1.130";  // web server IP address
+$WebHostIP = "192.168.1.20";  // web server IP address
 $MysqlServer  = $WebHostIP;     // mysql server ip/name
 $MythTVdb     = "mythconverg";  // mythtv database name
 $MythTVdbuser = "mythtv";       // mythtv database user

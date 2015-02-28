@@ -1,5 +1,5 @@
 <?php
-require_once 'settings.php';
+require_once 'globals.php';
 
 // jobqueue classes
 class Jobs extends XmlEmitter {}

@@ -2,7 +2,7 @@
 // adapted from http://forums.phpfreaks.com/topic/106711-php-code-which-supports-byte-range-downloads-for-iphone/#entry547301
 // thank you to phpfreak jonsjava
 
-require_once './settings.php'; 
+require_once './globals.php';
 
 if (isset ($_GET['image'])) { //send a file spec
 	$file = rawurldecode($_GET['image']);

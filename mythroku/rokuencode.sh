@@ -22,12 +22,11 @@ date=`date`
 echo "$newbname:$date Encoding" >> $LOGFILE
 /usr/bin/HandBrakeCLI --preset='iPhone & iPod Touch' -i $MYTHDIR/$MPGFILE -o $newname 
 
+# update the db to point to the mp4
 date=`date`
 echo "$newbname:$date Database/remove" >> $LOGFILE
-# update the db to point to the mp4
 NEWFILESIZE=`du -b "$newname" | cut -f1`
-echo "UPDATE recorded SET basename='$newbname.mp4',filesize='$NEWFILESIZE' WHERE basename='$2';" > /tmp/update-database.sql
-mysql --user=$DATABASEUSER --password=$DATABASEPASSWORD mythconverg < /tmp/update-database.sql
+echo "UPDATE recorded SET basename='$newbname.mp4',filesize='$NEWFILESIZE' WHERE basename='$2';" | mysql --user=$DATABASEUSER --password=$DATABASEPASSWORD mythconverg
 
 # update the seek table
 date=`date`

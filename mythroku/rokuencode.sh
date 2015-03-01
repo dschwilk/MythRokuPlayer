@@ -6,7 +6,7 @@ renice +15 --pid $$
 LOGFILE="/var/log/mythtv/rokuencode.log"
 DATABASEUSER=mythtv
 DATABASEPASSWORD=mythtv
-HANDBRAKE_PRESET=Normal
+HANDBRAKE_PRESET='iPhone & iPod Touch'
 REMOVE_MPEG=false
 
 # find HandBrakeCLI

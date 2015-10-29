@@ -14,7 +14,9 @@ class Program extends XmlInjector {
 class ProgramTpl extends Program {
 	const rsNONE = '<Program><Title>Nothing Found.</Title><Description>No results from your selection.  This is probably not a problem.</Description></Program>';
 	const rsEMPTY = '<Program><Title>Service returned nothing.</Title><Description>Data from the service was empty.  Please try again later.</Description></Program>';
-	const rsERROR = '<Program><Title/><Description/></Program>';  //it is expected that Title and Description will be filled from the error information before passing this to the Item constructor  -RSH
+    // it is expected that Title and Description will be filled from the error
+    // information before passing this to the Item constructor
+	const rsERROR = '<Program><Title/><Description/></Program>';  
 	
 	public function __construct($xml){
 		if(useUTC())
@@ -54,7 +56,8 @@ class categoryLeaf extends XmlEmitter {
 	public function __construct(){
 		$arguments = func_get_args();
 		
-		// the player UI dies if category leaf has null value for description attribute, so fix it -RSH
+		// the player UI dies if category leaf has null value for description
+		// attribute, so fix it -RSH
 		if (!array_key_exists(XmlEmitter::ATR.'description', $arguments[0])) {
 			$arguments[0][XmlEmitter::ATR.'description'] = '';			
 		}

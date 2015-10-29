@@ -1,5 +1,6 @@
 <?php
-// adapted from http://forums.phpfreaks.com/topic/106711-php-code-which-supports-byte-range-downloads-for-iphone/#entry547301
+// adapted from
+// http://forums.phpfreaks.com/topic/106711-php-code-which-supports-byte-range-downloads-for-iphone/#entry547301
 // thank you to phpfreak jonsjava
 
 require_once './settings.php'; 
@@ -43,7 +44,7 @@ if (isset ($_GET['static'])) { // send a file spec
 		$conditions = array('conditions' => array('chanid=? and starttime=? ', $chanid, $rawstarttime)); 
 		$record = Recorded::first( $conditions );		
 		$file = $record->storagegroups->dirname . $record->basename . '.png'; 
-    	if(!file_exists($file)) { //generate preview images since the user may not be invoking this from myth frontend
+    	if(!file_exists($file)) { // generate preview images:
     		file_get_contents($MythContentSvc . 'GetPreviewImage' . "?ChanId=$chanid&StartTime=$rawstarttime");
 //     		error_log(
 //     			"*** " . implode( '|',
@@ -79,7 +80,9 @@ function output($file)
 	$fp = fopen($file, "r");
 	if ($fp) {
 		while (!feof($fp)) {			
-			echo fread($fp, 1024);  //changing the buffer size here seems to make little difference as the chunk is followed by a request for a range -RSH
+			echo fread($fp, 1024);  //changing the buffer size here seems to
+                                    //make little difference as the chunk is
+                                    //followed by a request for a range -RSH
 			flush();
 		}
 		fclose($fp);

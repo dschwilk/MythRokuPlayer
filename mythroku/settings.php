@@ -46,7 +46,7 @@ $MythContentSvc = "http://" . $MythBackendIP . ":" . $MythBackendPort . "/Conten
 $MythDvrSvc = "http://" . $MythBackendIP . ":" . $MythBackendPort . "/Dvr/";
 $localSvc = "$WebServer/$MythRokuDir/$localSvcDir/";
 
-$RokuDisplayType = "SD";	// set to the same as your Roku player under
+$RokuDisplayType = "HD";	// set to the same as your Roku player under
                             // display type, HD or SD
 $BitRate = "1500";			// bit rate of endcoded streams
 
